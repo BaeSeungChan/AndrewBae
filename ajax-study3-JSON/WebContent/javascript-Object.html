@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript-Object.html</title>
+<script type="text/javascript">
+	//자바스크립트 생성자
+	function Person(name, age){
+		this.name = name;
+		this.age = age;
+		this.open = open;
+	}
+	
+	function open(method, url){
+		alert(method+"방식으로 "+url+" 연결");
+	}
+	
+	//javascript 객체 생성 테스트
+	function testObj(){
+		var p1 = new Person("공유", 39);
+		alert(p1.name);
+		alert(p1.age);
+		p1.open("GET", "HelloServlet");
+	}
+	
+	function testObj2(){
+		//json 으로 객체 생성
+		var p2 = {name: "광유", age: 26};
+		alert(p2.name+" "+p2.age);
+	}
+	
+	function testJSONArray(){
+		var pa = ["라면", "김밥", "떡볶이"];	//json array
+		for(var i=0; i<pa.length; i++)
+			alert(pa[i]);
+	}
+</script>
+</head>
+<body>
+	<!-- 자바스크립트 객체 생성 테스트 -->
+	<input type="button" value="객체테스트1" onclick="testObj()"><br>
+	<input type="button" value="객체테스트2" onclick="testObj2()"><br>
+	<input type="button" value="객체테스트3" onclick="testJSONArray()">
+</body>
+</html>

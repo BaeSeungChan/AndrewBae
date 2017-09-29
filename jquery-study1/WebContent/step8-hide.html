@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery hide, show test</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#hideBtn").click(function(){
+			// 동작시간지정, 완료 후 실행될 함수정의
+			$("#friend").hide(1000, function(){
+				alert("숨기기");
+			});
+		});
+		
+		$("#showBtn").click(function(){
+			$("#friend").show(1000, function(){
+				alert("보이기");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<img src="혜리.jpg" id="friend"><hr>
+	<input type="button" value="감추기" id="hideBtn"> 
+	<input type="button" value="보기" id="showBtn">
+</body>
+</html>

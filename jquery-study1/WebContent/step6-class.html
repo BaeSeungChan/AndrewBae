@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<script type="text/javascript">
+	// document ready 즉 웹문서를 브라우저가 처음 읽고 난 직후
+	// 실행되는 익명함수를 명시
+	// 이 ready 시점에 실행되는 익명함수는 현재 웹문서의 모든 행위에 대한 이벤트 처리를 등록 
+	$(document).ready(function() {
+		// class food 개체의 자식 요소를 셀렉터 
+		$(".food li").click(function(){
+			alert($(this).text());
+		});
+	});
+</script>
+<body>
+<!--
+	ol 목록 태그 중 class가 food인 대상들의 li(아이템)을 클릭하면
+	자신의 아이템 텍스트가 출력되도록 이벤트를 등록한다
+ -->
+	<ol class="food">
+		<li>김밥</li>
+		<li>백반</li>
+		<li>짬뽕</li>
+	</ol>
+	<ol class="food">
+		<li>소주</li>
+		<li>맥주</li>
+		<li>양주</li>
+	</ol>
+	<ol >
+		<li>가평</li>
+		<li>청평</li>
+		<li>양평</li>
+	</ol>
+</body>
+</html>

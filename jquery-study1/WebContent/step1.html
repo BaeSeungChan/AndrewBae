@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery basic</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// javascript document 객체가 로드되면 jquery의 ready 메서드가 실행되고
+	// 이 때 실행될 함수를 ready의 매개변수 인자값으로 명시한다
+	// step2.html에서는 아래 코드를 익명함수 형식으로 처리
+	
+	jQuery(document).ready(hello);
+	function hello(){
+		alert("hello jquery");
+	}
+</script>
+</head>
+<body>
+	jquery 기초 연습1
+</body>
+</html>

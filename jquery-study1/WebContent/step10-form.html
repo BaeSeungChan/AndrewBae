@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//id testForm이 전송되기 전에 실행할 이벤트를 등록
+		$("#testForm").submit(function(){
+			//alert($("#userId").val());
+			
+			//userId 입력값을 지운다
+			//$("#userId").val("");
+			//$("#userId").focus();
+			//		|
+			//$("#userId").val("").focus();
+			
+			//testForm 내에 있는 radio button 수
+			//alert($("#testForm :radio").length);
+			
+			//testForm 내에 있는 gender name의 radio button 수
+			//alert($("#testForm :radio[name=gender]").length);
+			
+			//testForm 내에 있는 gender name의 radio checked된 button 수
+			//alert($("#testForm :radio[name=gender]:checked").length);
+			
+			//checked 된 radio button의 값을 출력
+			//alert($("#testForm :radio[name=gender]:checked").val());
+			
+			// ==>
+			var cr = $("#testForm :radio[name=gender]:checked");
+			alert(cr.val());
+			return false;		//false를 리턴하므로 전송되지 않는다
+		});
+	});
+</script>
+</head>
+<body>
+	<form id="testForm" action="test.jsp">
+		아이디<input type="text" id="userId" name="userId"><br>
+		<input type="radio" name="gender" value="남">남자<br>
+		<input type="radio" name="gender" value="여">여자<br>
+		<input type="radio" name="hobby" value="독서">독서<br>
+		<input type="submit" value="등록">
+	</form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#testBtn").click(function(){
+			alert($(this).val());
+		});
+		
+		//student class 영역을 클릭하면 해당 text를
+		//아래의 nameInfo 아이디 div영역에 정보를 할당한다
+		//추가로 teacher class까지 적용되도록 selector를 변경
+		$(".student,.teacher").click(function(){
+			$("#nameInfo").text($(this).text());
+		});
+		
+		$(".a").click(function(){
+			alert($(this).text()+" 클릭!");
+		});
+	});
+	
+</script>
+<style type="text/css">
+	.student{
+		background-color: pink;
+	}
+</style>
+</head>
+<body>
+	<input type="button" id="testBtn" value="jquery셀렉터테스트"><br><br>
+	<div class="student">배승찬</div>
+	<div class="teacher">정우성</div>
+	<div class="student">한송희</div>
+	<hr>
+	<div id="nameInfo"></div>
+	<br><br>
+	
+	<div class="a">a div</div>
+	<div class="b">b div</div>
+	<!-- 아래 div는 class a 속성과 b 속성을 모두 적용받겠다 -->
+	<div class="a b">a b div</div>
+	
+</body>
+</html>

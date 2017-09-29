@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("a").click(function(){
+			//alert(" 이동하시겠습니까?"");
+			//return false;	링크 주소로 이동되지 않게 한다
+			return confirm($(this).text()+" 이동하시겠습니까?");
+		});
+	});
+</script>
+</head>
+<body>
+	<a href="http://daum.net">다음넷으로</a><br><br>
+	<a href="http://www.naver.com">네이버로</a><br><br>
+	<a href="http://google.com">구글로</a><br><br>
+	<!-- 
+		현 페이지의 모든 링크에 대해 이동하시겠습니까?
+		의사를 확인한 후 이동시키도록 이벤트를 처리한다
+	 -->
+</body>
+</html>

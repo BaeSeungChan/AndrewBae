@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script type="text/javascript">
+  	$(document).ready(function() {
+  		$("#gf").hide();
+  		
+  		$("#fadeInBtn").click(function() {
+			$("#gf").fadeIn(2000, function(){
+				$("#stateView").text("이미지가 보이는 상태")
+			});
+		});
+  		
+  		$("#fadeOutBtn").click(function() {
+			$("#gf").fadeOut(2000, function(){
+				$("#stateView").text("이미지가 보이지 않는 상태")
+			});
+		});
+  	});
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <h2>jquery review</h2>
+  <p id="stateView"></p>            
+  <img src="혜리.jpg" class="img-circle" alt="혜리" width="304" height="236" id="gf"><br>
+  <button type="button" class="btn btn-success" id="fadeInBtn">이미지보기</button>&nbsp;&nbsp;
+  <button type="button" class="btn btn-warning" id="fadeOutBtn">이미지감추기</button>
+  <!-- 
+  		처음 화면이 로드될 때는 화면에 이미지가 보이지 않게 한다 hide
+	  	fadeIn 메서드로 이미지를 보여주고
+	  	fadeOut 메서드로 이미지를 감춘다
+	  	
+	  	fadeIn이 완료되면 상단부 stateView에 이미지가 보이는 상태
+	  	fadeOut이 완료되면 상단부 stateView에 이미지가 보이지 않는 상태라 표시한다
+   -->
+</div>
+</body>
+</html>

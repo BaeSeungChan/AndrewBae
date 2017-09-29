@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+	span{
+		background-color: yellow;
+	}
+	
+	#descInfo{
+		display: none;
+	}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#desc").click(function(){
+			$("#descInfo").toggle(1000, function(){
+				var result = $("#descInfo").css("display")=="none";
+				if(result){
+					$("#desc").text("배승찬 정보 접기");
+				}else{
+					$("#desc").text("배승찬 정보 보기");
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<span id="desc">배승찬 정보 더보기</span>
+	<p id="descInfo">
+		본명은 배승찬, 별명 배박사, 주소는 동탄이고<br>
+		나이는 만 28세, 직책은 kosta 164기 대표<br>
+		미혼이고 곧 결혼 할 예정<br>
+	</p>
+	
+	<!-- 
+		처음 로드시에는 descInfo 영역은 보이지 않게 처리.
+		desc span을 클릭하면 descInfo 영역의 정보가 보이게 하고
+		desc span 영역의 메세지가 배승찬 정보 접기로 변경된다
+		다시
+		desc span 영역의 접기를 클릭하면
+		descInfo 정보가 보이지 않게 하고 
+		desc span 영역의 메세지가 배승찬 정보 보기로 변경된다
+	 -->
+</body>
+</html>

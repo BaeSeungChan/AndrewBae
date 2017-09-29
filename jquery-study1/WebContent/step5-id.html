@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery id selector</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// id가 btn2버튼 클릭시 이벤트 등록
+		$("#btn2").click(function(){
+			alert($(this).val()+" 클릭했네요!");
+			//id btnInfo span 영역에 틀정 텍스트를 할당
+			$("#btnInfo").text($(this).val());
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="테스트1"><br><br>
+	<input type="button" value="테스트2" id="btn2"><br><br>
+	<input type="button" value="테스트3"><br><br>
+	<span id="btnInfo"></span>
+
+		
+</body>
+</html>

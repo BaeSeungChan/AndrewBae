@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#mybtn1").click(function(){
+			alert($("#nickName").val());
+			
+			//nickName의 입력값을 지우고 포커스를 준다
+			$("#nickName").val("").focus();
+		});
+		
+		$("#testForm").submit(function () {
+			return confirm($("#memberName").text()+"("+$("#memberNick").val()+")"+" 전송하시겠습니까?");
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- mybtn1 아이디 버튼1을 클릭하면 alert로 nickName 아이디에 입력한 값이 출력되도록 한다 -->
+	<button type="button" id="mybtn1">버튼1</button>
+	<input type="text" id="nickName">
+	<hr>
+	<span id="memberName">배승찬님</span>
+	<form action="text.jsp" id="testForm">
+		<input type="text" name="nick" id="memberNick">
+		<!-- <input type="submit" value="전송"> -->
+		<!-- 버튼은 타입을 명시하지 않으면 default가 submit -->
+		<button type="submit">전송</button>
+		<button type="reset">리셋</button>
+	</form>
+	<!-- 전송버튼을 누르면 전송하시겠습니까 여부 의사를 물어본 후 확인시에만 전송한다 -->
+</body>
+</html>

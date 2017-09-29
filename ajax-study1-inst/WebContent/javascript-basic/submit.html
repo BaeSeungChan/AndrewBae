@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>submit.html</title>
+<script type="text/javascript">
+	function chkForm(){
+		// name으로 접근해본다
+		// var id = document.testForm.uid.value;
+		
+		// id로 접근해 본다
+		var id = document.getElementById("uid").value;
+		if(id==""){
+			alert("아이디를 입력하세요!");
+			document.testForm.uid.value="";
+			//return;	//매서드 실행 중단
+			return false;	//매서드 실행 중단하고 호출한 곳으로 false를 반환
+		}else{
+			confirm("서버에 전송하시겠습니까?");
+		}
+		return confirm("서버로 전송하시겠습니까?");
+	}
+	
+</script>
+</head>
+<body>
+	<form action="view.jsp" name="testForm" onsubmit="return chkForm()">
+		id<input type="text" name="userId" id="uid">
+		<input type="submit" value="전송">
+	</form>
+		
+	<!-- 
+				id 입력란이 공란이면 서버에 전송시키지 않겠다
+				confirm을 이용해 서버에 전송하시겠습니까
+				의사를 물어본 후 전송시키겠다
+	 -->
+</body>
+</html>

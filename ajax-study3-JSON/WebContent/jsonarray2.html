@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jsonarray2.html</title>
+<script type="text/javascript">
+   var xhr;
+   //익명함수로 콜백을 등록
+   function startAjax(){
+      xhr=new XMLHttpRequest();
+      //익명함수형식으로 등록
+      xhr.onreadystatechange=function(){
+    	  if(xhr.readyState==4&&xhr.status==200){
+        	  //json 문자열을 객체로 변환
+             var json=JSON.parse(xhr.responseText);
+        	 var info="";
+        	 for(var i=0; i<json.length; i++){
+        		 info += "<tr>";
+        		 info += "<td>"+json[i].id+"</<td>"+"<td>"+json[i].name+"</td>"+"<td>"+json[i].address+"</td>";
+        		 info += "</tr>";
+        	 }
+        	 document.getElementById("memberList").innerHTML = info;
+        	 
+          }
+      };
+      xhr.open("get","JSONArrayServlet2");
+      xhr.send(null);
+   }
+   
+   function deleteList(){
+	   document.getElementById("memberList").innerHTML = "";
+   }
+</script>
+
+<style type="text/css">
+	table {
+    	border-collapse: collapse;
+	}	
+
+	table, th, td {
+    	border: 1px solid black;
+	}
+	
+	th, td{
+		padding: 10px;
+	}
+</style>
+</head>
+<body>
+	<input type="button" value="회원목록보기" onclick="startAjax()">
+	<input type="button" value="회원목록지우기" onclick="deleteList()">
+	<hr><br><br>
+	<table>
+		<thead>
+			<tr>
+				<th>아이디</th>
+				<th>이름</th>
+				<th>주소</th>
+			</tr>
+		</thead>
+		<tbody id="memberList">
+			
+		</tbody>
+	</table>
+</body>
+</html>

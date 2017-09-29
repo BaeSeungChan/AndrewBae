@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script type="text/javascript">
+  	 $(document).ready(function() {
+  		/*$("#stateView").mouseenter(function(){
+			//이미지 보이게 한다
+			$("#gf").show();
+		});
+		
+		$("#stateView").mouseleave(function(){
+			//이미지를 안보이게 한다
+			$("#gf").hide();
+		});*/
+		
+	  	// hover(handler, handler) 를 이용해 위의 두가지 기능을 처리해본다
+	  	
+	  	$("#stateView").hover(function(){
+	  		$("#gf").show()
+	  	}, function(){
+	  		$("#gf").hide()
+	  	});
+		
+  	}); 
+  	
+  </script>
+  <style type="text/css">
+  	#gf{
+  		display: none;
+  	}
+  	
+  	#stateView{
+  		background-color: yellow;
+  	}
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <span id="stateView">마우스를 올려보세요</span><br><br>            
+  <img src="혜리.jpg" class="img-circle" alt="혜리" width="304" height="236" id="gf"><br><br>
+</div>
+</body>
+</html>

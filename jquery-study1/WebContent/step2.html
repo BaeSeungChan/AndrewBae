@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery basic</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	/* jQuery(document).ready(hello);
+	function hello(){
+		alert("hello jquery");
+	} */
+	
+	// 위 코드를 익명함수 형식으로 변경해본다
+	// jQuery는 $로 표현가능하다
+	$(document).ready(function(){
+		// 이 페이지에서 동작될 모든 행위(이벤트처리)를 일괄 등록하기 위해 익명함수를 명시한다
+		alert("hello jquery 익명함수로 처리\n이벤트 일괄 등록");
+	});
+</script>
+</head>
+<body>
+	jquery 기초 연습2
+</body>
+</html>

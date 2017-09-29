@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script type="text/javascript">
+  	$(document).ready(function() {
+  		
+  		$("#toggleBtn").click(function() {
+			$("#gf").toggle(1000);
+  		});
+  		
+  		$("#stateBtn").click(function () {
+			//alert($("#gf").css("display"));
+			//위 코드로 테스트 해본 결과 보이지 않는 상태에서는 none
+			var result = $("#gf").css("display")=="none";
+			
+			if(result){
+				//alert("보이지 않는 상태");
+				$("#stateView").text("보이지 않는 상태");
+			}else{
+				//alert("보이는 상태");
+				$("#stateView").text("보이는 상태");
+			}
+		});  		
+  	});
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <p id="stateView"></p>            
+  <img src="혜리.jpg" class="img-circle" alt="혜리" width="304" height="236" id="gf"><br><br>
+  <button type="button" class="btn btn-info" id="toggleBtn">토글테스트</button>
+  <button type="button" class="btn btn-info" id="stateBtn">상태확인</button>
+</div>
+</body>
+</html>

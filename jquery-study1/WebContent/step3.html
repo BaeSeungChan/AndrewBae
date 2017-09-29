@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery basic3</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){	
+		// 현 페이지 시작 시점에 한번 실행
+		// 현 페이지에서 동작될 모든 행위(이벤트 처리)에 대해 일괄 등록
+		// jquery selector를 이용해 현 페이지에 있는 모든 버튼에 대한 클릭 이벤트를 제어하도록 명시
+		// 모든 버튼은 클릭되면 명시한 익명함수가 실행되도록 클릭 이벤트 등록
+		$(":button").click(function(){
+			// this 현재 이벤트 발생 개체 (버튼)
+			// $().val(); 	jquery 함수 value 를 반환 ( set/get 가능 )
+			alert($(this).val()+" 버튼 누르지마!!");
+			$(this).fadeOut(2000);	// 다양한 기능을 지원
+			$(this).fadeIn(1000);
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="테스트1"><br><br>
+	<input type="button" value="테스트2"><br><br>
+	<input type="button" value="테스트3"><br><br>
+	<input type="button" value="테스트4"><br><br>
+	<input type="button" value="테스트5"><br><br>
+	<input type="button" value="테스트6"><br><br>
+	<input type="button" value="테스트7"><br><br>
+</body>
+</html>

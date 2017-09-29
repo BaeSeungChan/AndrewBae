@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery text(), html(), val()</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#testBtn").click(function(){
+			// id hobby 의 value를 출력
+			// 입력양식 요소 즉 value 속성이 존재하는 태그에
+			// 한해서 val()로 값을 할당하거나 얻어올 수 있다
+			// alert($("#hobby").val());
+			
+			// html() test
+			//alert($("#testDiv1").html());
+			//text() test
+			//alert($("#testDiv1").text());
+			// testDiv1에 있는 정보를 testDiv2로 이동
+			//$("#testDiv2").html($("#testDiv1").html());
+			//$("#testDiv2").text($("#testDiv1").text());
+			$("#testDiv2").html($("#testDiv1").html());
+		});
+	});
+</script>
+</head>
+<body>
+	<h3>jquery text(), html(), val()</h3>
+	<input type="button" value="테스트" id="testBtn"><br><br>
+	<input type="radio" id="hobby" value="코딩">코딩
+	<div id="testDiv1">
+		<font color="pink" size="5">아이유</font>
+	</div>
+	<hr>
+	<div id="testDiv2"></div>
+</body>
+</html>
